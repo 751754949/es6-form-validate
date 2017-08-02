@@ -21,9 +21,9 @@ form.register({
     REG_NUMBER: /^\d+\.\d{2}$/
 })
 
-form.reset('errorHandler', ($input)=>{
-    $input.closest('.form-group').addClass('has-error')
-}) 
+// form.reset('errorHandler', ($input)=>{
+//     $input.closest('.form-group').addClass('has-error')
+// }) 
 var page = {
     validate() {
         form.validate('.valid');
