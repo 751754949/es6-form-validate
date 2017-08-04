@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>不引入第三方视图框架</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <style>
+    input{display: block; height: 30px; text-indent: 5px; width: 350px; margin:0 auto 10px;}
+    .has-error {
+      color: red;
+      border: 1px solid red;
+    }
+    .has-success {
+      color: yellowgreen;
+    }
+  </style>
+</head>
+
+<body style="text-align:center;">
+<h1>不引入第三方视图框架</h1>
+  <!-- 只限定input的写法  -->
+  <!-- 哪个input需要校验，就给它添加data-rule="类型|表达式" 
+       类型：内置7中类型“zh、en、url、email、number、regexp和REG_*” 
+       表达式：可不写。
+       表达式中允许出现3个属性：size、decimal、type
+       后2个属性只能在number类型的表达式中出现
+  -->
+
+  <input data-rule="zh" type="text" placeholder="任意个数的中文" required>
+
+  <input data-rule="zh|size:1-3" type="text" placeholder="1-3个中文" required>
+
+  <!-- number类型支持的写法比较丰富 -->
+
+  <input type="text" data-rule="number" placeholder="任意个数的数字" required>
+
+  <input type="text" data-rule="number|size:1-3" placeholder="1-3个数字" required>
+
+  <input type="text" data-rule="number|size:1-3,type:-1" placeholder="1-3位的负数" required>
+
+  <input type="text" data-rule="number|size:1-3,type:-1,decimal:2" placeholder="1-3位的负数,2位小数点" required>
+
+  <!-- regexp类型，表示取pattern属性的正则进行校验 -->
+
+  <input data-rule="regexp" pattern="^[A-Z]\w{5,11}$" type="text" placeholder="首字母大写的密码(6-12)" required>
+
+  <!-- 关于REG_*类型,表示可以通过register接口，注册新的"规则" -->
+
+  <input type="text" data-rule="REG_PASSWORD" placeholder="首字母大写的密码(6-12)" required>
+
+  <button href="javascript:;" class="weui-btn weui-btn_primary" type="submit" onclick="soon.page.validate()">提交</button>
+</body>
+
+</html>
