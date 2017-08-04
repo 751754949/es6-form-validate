@@ -11,7 +11,18 @@
 
 总之，要怼谁就给谁加data-rule，要什么样的视图表现由你引入（任意接入现有的css框架）
 
-## 安装
+## 如何运行Demo
+
+```shell
+npm install
+npm run test
+```
+
+浏览器访问：  
+http://localhost:3000/build/demo1.html  
+http://localhost:3000/build/demo2.html
+
+## 使用方法
 
 ```html
 <input type="text" name="link" placeholder="链接" data-rule="url" data-help="不能为空" required>
