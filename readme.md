@@ -45,7 +45,7 @@ import $ from 'jquery';
 2. data-rule="类型|表达式"   
 
 关于第一种写法，所有内置类型（共7种，见下表）都支持这么写。
-关于第二种写法，只有“zh，en，number，select”3种类型才支持这种写法。表达式中允许出现3个属性：size、decimal、type（后2个只能在number类型的表达式中出现）
+关于第二种写法，只有“zh，en，number”3种类型才支持这种写法。表达式中允许出现3个属性：size、decimal、type（后2个只能在number类型的表达式中出现）
 
 ```html
 <input type="text" name="nickname" data-rule="zh|size:6-8">
@@ -77,14 +77,14 @@ import $ from 'jquery';
 
 #### @data-help
 
-选填项，错误时error wording从这里取
+选填项，错误时error wording从这里取。没写data-help则从placeholder取
 
 #### @required
 
 选填项，表示该`input`为必填项，不写则允许空值。比如下例允许空值，但非空时会校验输入值是否有效：
     
 ```html                     
-<input type="text" name="link" placeholder="链接" data-rule="url" data-help="不能为空">
+<input type="text" name="link" placeholder="链接" data-rule="url" data-help="s请输入链接">
 ```
 
 ## 方法
